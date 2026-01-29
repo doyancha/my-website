@@ -69,6 +69,7 @@ header {
 .home {
   min-height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 0 2rem;
   background: linear-gradient(
@@ -470,4 +471,417 @@ button:active,
   .about-image img.active {
     transform: scale(1.05);
   }
+}
+.about-section {
+  padding: 6rem 2rem;
+  background: #f8f9fa; /* Light background for contrast */
+  text-align: center;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: #444;
+}
+
+.btn {
+  /* your existing button styles */
+}
+
+/* VIEW PROJECT BUTTON STYLES */
+.btn-view-project {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background: var(--accent1);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-view-project:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(196, 35, 0, 0.4);
+}
+
+.btn-view-project:active {
+  transform: translateY(0);
+}
+
+/* PROJECT MODAL STYLES */
+.project-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.3s ease;
+  overflow-y: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  margin: 5% auto;
+  padding: 2rem;
+  border: 1px solid var(--accent2);
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  color: var(--accent2);
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--accent1);
+}
+
+.modal-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--accent2);
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-header h2 {
+  font-size: 2.2rem;
+  color: var(--accent2);
+  margin: 0;
+}
+
+.modal-project-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.project-details-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-project-image {
+  display: none;
+}
+
+.project-details-right h3 {
+  font-size: 1.3rem;
+  color: var(--accent2);
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.project-details-right p {
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.modal-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background: var(--accent1);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.project-highlights {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.project-highlights li {
+  padding: 0.6rem 0;
+  padding-left: 1.5rem;
+  color: #ddd;
+  position: relative;
+  line-height: 1.6;
+}
+
+.project-highlights li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-weight: bold;
+}
+
+.project-results {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.2rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent2);
+  color: #ddd;
+  line-height: 1.8;
+}
+
+/* CAROUSEL STYLES */
+.project-carousel-container {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.carousel-title {
+  font-size: 1.3rem;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(196, 35, 0, 0.8);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover {
+  background: var(--accent2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.carousel-dot.active {
+  background: var(--accent2);
+  width: 14px;
+  height: 14px;
+  border-color: var(--accent1);
+}
+
+.carousel-dot:hover {
+  background: var(--accent1);
+  transform: scale(1.2);
+}
+
+.carousel-instruction {
+  text-align: center;
+  padding: 0.8rem;
+  background: rgba(196, 35, 0, 0.2);
+  border-top: 1px solid var(--accent2);
+  border-radius: 0 0 12px 12px;
+  margin-top: -4px;
+}
+
+.carousel-instruction p {
+  font-size: 0.9rem;
+  color: var(--accent2);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE MODAL */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+    margin: 20% auto;
+  }
+
+  .modal-project-details {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-details-right h3 {
+    font-size: 1.1rem;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .carousel-slide {
+    aspect-ratio: 3/2;
+  }
+}
+
+/* FULLSCREEN VIEWER STYLES */
+.fullscreen-viewer {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  animation: fadeIn 0.3s ease;
+}
+
+.fullscreen-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#fullscreenImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  animation: slideIn 0.3s ease;
+}
+
+.fullscreen-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: var(--accent2);
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 10;
+}
+
+.fullscreen-close:hover {
+  color: var(--accent1);
+}
+
+.carousel-slide {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-slide:hover {
+  opacity: 0.8;
 }

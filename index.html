@@ -30,11 +30,12 @@
   <!-- HOME SECTION -->
   <section id="home" class="home">
     <div class="home-content">
-      <h1>Hi, I'm Alex Doe</h1>
-      <h2>Front-End Web Developer</h2>
+      <h1>Hi, I'm Mir Shahadut Hossain</h1>
+      <h2>Data Analyst | Insight Hunter</h2>
       <p>
-        I design and build clean, responsive, and user-friendly websites
-        using modern web technologies.
+        I turn data into decisions. Skilled in SQL, Python, visualization tools (Tableau, Power BI), and predictive modeling.
+        Passionate about revealing what the numbers really say and helping businesses act on it.
+        Browse my projects ↓
       </p>
       <a href="#projects" class="btn">View My Work</a>
     </div>
@@ -52,24 +53,21 @@
     <div class="about-text">
       <h2>About Me</h2>
       <p>
-        I’m Alex Doe, a passionate front-end developer who loves transforming
-        ideas into visually appealing and functional digital experiences.
-        With a strong focus on clean design and usability, I aim to build
-        websites that not only look great but also perform smoothly.
-      </p>
-
-      <p>
-        Over the years, I’ve worked on various fictional projects ranging from
-        personal portfolios to business landing pages. My approach combines
-        creativity, attention to detail, and modern web standards to deliver
-        high-quality results.
-      </p>
-
-      <p>
-        When I’m not coding, I enjoy exploring new design trends, learning
-        emerging technologies, and refining my problem-solving skills.
-      </p>
-    </div>
+        Hi, I'm <strong>Mir Shahadut Hossain</strong>, a passionate Data Analyst based in Dhaka, Bangladesh. I love transforming raw, messy data into clear, actionable insights that help businesses make smarter decisions and uncover hidden opportunities.
+    </p>
+    <p>
+      With strong skills in <strong>SQL</strong>, <strong>Python</strong> (pandas, numpy, scikit-learn), <strong>Excel/Google Sheets</strong>, and visualization tools like <strong>Tableau</strong> and <strong>Power BI</strong>, I specialize in exploratory data analysis, dashboard creation, customer behavior insights, predictive modeling, and business intelligence storytelling.
+    </p>
+    <p>
+      I've worked on real-world projects including e-commerce customer segmentation, sales performance dashboards, churn prediction, and pizza sales trend analysis — turning numbers into narratives that drive results. I'm constantly learning and excited about the power of data in solving everyday business challenges.
+    </p>
+    <p>
+      Whether you're a startup looking to understand your users better or an established company optimizing operations, I'd love to collaborate and bring clarity to your data.
+    </p>
+    <a href="#projects" class="btn">See My Projects →</a>
+    <!-- Optional: Add contact or LinkedIn button -->
+    <!-- <a href="https://www.linkedin.com/in/your-profile" class="btn secondary">Connect on LinkedIn</a> -->
+  </div>
 
     <div class="about-stats">
       <div class="stat">
@@ -101,12 +99,14 @@
 
     <div class="projects-grid">
       <div class="project-card">
-        <h3>Creative Portfolio</h3>
+        <h3>FoodExpress Data Analytics</h3>
         <p>
-          A modern personal portfolio website designed with smooth layouts,
-          responsive design, and clean animations.
+          Analyzed FoodExpress delivery data using Python, including cleaning, preprocessing, 
+          and exploratory analysis, and developed interactive visualizations 
+          to support data-driven business decisions.
         </p>
         <span class="tech">HTML • CSS • JavaScript</span>
+        <button class="btn-view-project" data-project="project1">View Project</button>
       </div>
 
       <div class="project-card">
@@ -116,6 +116,7 @@
           on clarity, performance, and user engagement.
         </p>
         <span class="tech">HTML • CSS • JavaScript</span>
+        <button class="btn-view-project" data-project="project2">View Project</button>
       </div>
 
       <div class="project-card">
@@ -125,6 +126,7 @@
           and dynamic content handling.
         </p>
         <span class="tech">JavaScript • DOM • UI Design</span>
+        <button class="btn-view-project" data-project="project3">View Project</button>
       </div>
 
       <div class="project-card">
@@ -134,6 +136,7 @@
           and smooth hover interactions.
         </p>
         <span class="tech">HTML • CSS • Animations</span>
+        <button class="btn-view-project" data-project="project4">View Project</button>
       </div>
     </div>
   </div>
@@ -168,10 +171,57 @@
   </div>
 </section>
 
-<section id="home" class="home reveal">
-<section id="about" class="about reveal">
-<section id="projects" class="projects reveal">
-<section id="contact" class="contact reveal">
+<!-- FULLSCREEN IMAGE VIEWER -->
+<div id="fullscreenViewer" class="fullscreen-viewer">
+  <div class="fullscreen-container">
+    <span class="fullscreen-close">&times;</span>
+    <img id="fullscreenImage" src="" alt="Fullscreen Image">
+  </div>
+</div>
+
+<!-- PROJECT DETAILS MODAL -->
+<div id="projectModal" class="project-modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <div class="modal-body">
+      <div class="modal-header">
+        <h2 id="modalProjectTitle"></h2>
+      </div>
+      <div class="modal-project-details">
+        <div class="project-details-left">
+          <div id="projectCarouselContainer" class="project-carousel-container" style="display:none;">
+            <h3 class="carousel-title" id="carouselTitle"></h3>
+            <div class="carousel-wrapper">
+              <div class="carousel-slides" id="carouselSlides"></div>
+              <button class="carousel-btn carousel-prev" id="prevBtn">❮</button>
+              <button class="carousel-btn carousel-next" id="nextBtn">❯</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+            <div class="carousel-instruction">
+              <p>💡 Click on any image to view in fullscreen</p>
+            </div>
+          </div>
+          <img id="modalProjectImage" src="" alt="Project Image" class="modal-project-image">
+        </div>
+        <div class="project-details-right">
+          <h3>Project Overview</h3>
+          <p id="modalProjectDescription"></p>
+          
+          <h3>Technologies Used</h3>
+          <div id="modalProjectTech" class="modal-tech-tags"></div>
+          
+          <h3>Key Highlights</h3>
+          <ul id="modalProjectHighlights" class="project-highlights"></ul>
+          
+          <h3>Results & Insights</h3>
+          <div id="modalProjectResults" class="project-results"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 
